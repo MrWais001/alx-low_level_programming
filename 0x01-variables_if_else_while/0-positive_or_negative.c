@@ -1,5 +1,5 @@
 #include <stdlib.h>
-
+#include <stdio.h>
 #include <time.h>
 /**
  * main - Prints with proper grammar, but the outcome is art
