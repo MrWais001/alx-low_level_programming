@@ -7,7 +7,7 @@
 int main(void)
 {
 	int n;
-	for (i = 0; n <5; n++)
+	for (n = 0; n <5; n++)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
