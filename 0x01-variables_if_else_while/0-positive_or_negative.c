@@ -12,6 +12,10 @@ int main(void)
 	for (n = 0; n <5; n++)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	if (n > 0)
+	{
+		printf("%d: is positive", n)
+	}
 	/* your code goes there */
 	return 0;
 }
