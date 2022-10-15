@@ -1,18 +1,15 @@
 #include <stdio.h>
 
 /**
- *  * main - entry point
- *   *
- *    * Description: display triple digits and ,
- *     *
- *      * Return: Always 0 (successful)
- *       */
+ * main - entry point
+ * Description: display triple digits and ,
+ * Return: Always 0 (successful)
+ */
 
 int main(void)
 {
-	    int i, j, k, l;
-
-	        i = 0;
+	int i, j, k, l
+		i = 0;
 		    while (i < 1000)
 			        {
 					        j = i / 100; /* hundreds */
