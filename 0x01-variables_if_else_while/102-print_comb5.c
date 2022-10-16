@@ -11,4 +11,5 @@ int main()
 	for (i=0, j=1; i<100; i++, j++)
 		putchar(i);
 		putchar(j);
+	return 0;
 }
