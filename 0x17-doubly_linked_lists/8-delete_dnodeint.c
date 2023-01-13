@@ -1,48 +1,35 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - deletes the node at index index
- * @head: doubly linkedlist
- * @index: index to remove node
- * Return: 1 if removed, -1 if fails
+ * delete_dnodeint_at_index - delete node at a given index
+ *
+ * @head: pointer to the head
+ * @idx: position to delete
+ * Return: pointer to new node
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+int delete_dnodeint_at_index(
+		dlistint_t **head, unsigned int idx)
 {
-	dlistint_t *actual = *head;
-	unsigned int cnt;
+	dlistint_t *h = *head;
+	unsigned int i = 0;
 
-	if (!head || !actual)
+	if (!head)
 		return (-1);
-
-	if (index == 0)
+	while (h && i < idx)
 	{
-		actual = actual->next;
-		free(*head);
-		*head = actual;
-		if (*head)
-			(*head)->prev = NULL;
+		h = h->next;
+		i++;
+	}
+	if (i == idx && h)
+	{
+		if (h->prev)
+			h->prev->next = h->next;
+		if (h->next)
+			h->next->prev = h->prev;
+		if (i == 0)
+			*head = h->next;
+		free(h);
 		return (1);
 	}
-	for (cnt = 0; actual; cnt++)
-	{
-		if (cnt == index)
-		{
-			if (actual->next)
-			{
-				(actual->prev)->next = actual->next;
-				(actual->next)->prev = actual->prev;
-				free(actual);
-				return (1);
-			}
-			else
-			{
-				(actual->prev)->next = NULL;
-				free(actual);
-				return (1);
-			}
-		}
-		actual = actual->next;
-	}
-
 	return (-1);
 }
